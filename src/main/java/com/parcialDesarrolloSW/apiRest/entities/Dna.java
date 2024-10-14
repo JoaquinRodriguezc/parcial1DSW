@@ -15,5 +15,9 @@ public class Dna {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "sequence")
+    private String sequence;
+    @Column(name = "isMutant",nullable = true)
+    private boolean isMutant;
 
 }

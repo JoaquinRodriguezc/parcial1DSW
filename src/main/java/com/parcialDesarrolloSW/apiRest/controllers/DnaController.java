@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.*;
 public class DnaController {
     @Autowired
     protected DnaService servicio;
-    @GetMapping("/mutant")
-    public ResponseEntity<?> isMutant() {
+    @PostMapping("/mutant")
+    public ResponseEntity<?> isMutant(@RequestBody() Dna entity) {
 
         try {
-            return ResponseEntity.status(HttpStatus.OK).body("ok");
-            //return ResponseEntity.status(HttpStatus.OK).body(servicio.isMutant(entity));
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.isMutant(entity));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente más tarde\"}");
         }
