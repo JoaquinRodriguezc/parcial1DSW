@@ -16,7 +16,11 @@ public class DnaController {
     public ResponseEntity<?> isMutant(@RequestBody() MutantRequestDTO dnaSequence) {
 
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.isMutant(dnaSequence));
+            if(servicio.checkDNA(dnaSequence).isMutant()){
+                return ResponseEntity.status(HttpStatus.OK).body(servicio.checkDNA(dnaSequence).getId());
+            }else{
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body("");
+            }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente más tarde\"}");
         }
