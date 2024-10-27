@@ -3,6 +3,9 @@ package com.parcialDesarrolloSW.apiRest.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+import java.util.List;
+
 @Entity
 @Table(name = "Dna")
 @AllArgsConstructor
@@ -10,13 +13,14 @@ import lombok.*;
 @Getter
 @ToString
 @Builder
-public class Dna {
+@NoArgsConstructor
+public class Dna implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "sequence")
-    private String sequence;
+    @Column(name = "dna")
+    private String dna;
     @Column(name = "isMutant",nullable = true)
     private boolean isMutant;
 
