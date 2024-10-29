@@ -32,3 +32,11 @@ Expande la API con almacenamiento en base de datos y un endpoint para estadísti
 
 #### Diagrama de Secuencia - Nivel 3
 ![Diagrama Stats](docs/stats-sequence.png)
+
+### Pruebas de Estrés con JMeter
+#### GET /stats
+![Resumen prueba estrés GET /stats](docs/stress-get-stats.png)
+
+#### POST /mutant
+![Resumen prueba estrés POST /mutant](docs/stress-post-mutant.png)
+En este último caso, la conexión a la base de datos fue rechazada en un momento pero el programa no se cayó.
