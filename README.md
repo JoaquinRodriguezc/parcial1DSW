@@ -40,3 +40,5 @@ Expande la API con almacenamiento en base de datos y un endpoint para estadísti
 #### POST /mutant
 ![Resumen prueba estrés POST /mutant](docs/stress-post-mutant.png)
 En este último caso, la conexión a la base de datos fue rechazada en un momento pero el programa no se cayó.
+### Reporte de Pruebas Unitarias al Servicio que detecta si un DNA es mutante o no
+![img.png](docs/jococo.png)
